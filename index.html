@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <body>
+    Hello, World!
+    <script>
+      var ws = new WebSocket("ws://" + window.location.host + "/ws");
+      ws.onmessage = function(evt) {
+        console.log(evt.data);
+      };
+      ws.onopen = function(evt) {
+        ws.send("Hello, World!");
+      };
+    </script>
+  </body>
+</html>
